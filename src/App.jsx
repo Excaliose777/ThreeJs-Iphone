@@ -3,15 +3,24 @@ import Jumbotron from "./components/Jumbotron";
 import SoundSection from "./components/SoundSection";
 import DisplaySection from "./components/DisplaySection";
 import WebgiViewer from "./components/WebgiViewer";
+import { useRef } from "react";
+
 function App() {
+  const contentRef = useRef();
+  const webgiViewerRef = useRef();
+  const handlePreview = () => {
+    webgiViewerRef.current.triggerPreview();
+  };
 
   return (
     <div className="App">
-      <Nav/>
-      <Jumbotron/>
-      <SoundSection/>
-      <DisplaySection/>
-      <WebgiViewer/>
+      <div id="content" ref={contentRef}>
+        <Nav />
+        <Jumbotron />
+        <SoundSection />
+        <DisplaySection triggerPreview={handlePreview} />
+      </div>
+      <WebgiViewer contentRef={contentRef} ref={webgiViewerRef} />
     </div>
   );
 }
