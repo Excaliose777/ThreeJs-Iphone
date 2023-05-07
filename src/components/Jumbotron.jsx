@@ -19,7 +19,7 @@ const Jumbotron = () => {
       <img className="logo" src={Iphone} alt="iPhone 14 pro" />
       <p className="text"> Big and Bigger.</p>
       <span className="description">
-        From $50/mo for 24 mo. or $999 before trade-in
+        From $49.99/mo for 24 mo. or $999 before trade-in
       </span>
       <ul className="links">
         <li>
